@@ -34,7 +34,6 @@ class ExampleUnit2Test {
         paparazzi.snapshot {
             val engine = FakeImageLoaderEngine.Builder()
                 .intercept("https://www.example.com/image.jpg", ColorDrawable(Color.RED))
-                .intercept({ it is String && it.endsWith("test.png") }, ColorDrawable(Color.GREEN))
                 .default(ColorDrawable(Color.BLUE))
                 .build()
             val imageLoader = ImageLoader.Builder(paparazzi.context)
